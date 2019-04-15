@@ -7,7 +7,7 @@ static void LcdWaitReady( void )
     LCD1602_DB = 0xFF;
     LCD1602_RS = 0;
     LCD1602_RW = 1;
-    Delay5ms();
+    /*暂时省缺，延时五毫秒*/
     do
     {
         LCD1602_E = 1;
@@ -23,7 +23,7 @@ void LcdWriteCmd(unsigned char cmd)
     LCD1602_RS = 0;
     LCD1602_RW = 0;
     LCD1602_DB = cmd;
-    Delay5ms();
+    /*暂时省缺，延时五毫秒*/
     LCD1602_E = 1;
     LCD1602_E = 0;
 }
@@ -35,7 +35,7 @@ void LcdWriteDat(unsigned char dat)
     LCD1602_RS = 1;
     LCD1602_RW = 0;
     LCD1602_DB = dat;
-    Delay5ms();
+    /*暂时省缺，延时五毫秒*/
     LCD1602_E = 1;
     LCD1602_E = 0;
 }
@@ -69,7 +69,7 @@ static void InitLcd1602( void )
 {
 
     LcdWriteCmd(0x38);
-    Delay5ms();
+    /*暂时省缺，延时五毫秒*/
     LcdWriteCmd(0x0c);	  //显示器开，光标关闭
     LcdWriteCmd(0x06);	  //文字不动，地址主动加一
     LcdWriteCmd(0x01);	  //清屏
